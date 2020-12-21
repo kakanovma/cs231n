@@ -58,7 +58,7 @@ def svm_loss_naive(W, X, y, reg):
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
     dW /= num_train
-    dW += reg * W
+    dW += reg * 2 * W
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -112,7 +112,7 @@ def svm_loss_vectorized(W, X, y, reg):
     row_sum = np.sum(binary, axis=1)
     binary[np.arange(num_train), y] = -row_sum.T
     dW = np.dot(X.T, binary) / num_train
-    dW += reg * W
+    dW += reg * 2 * W
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
